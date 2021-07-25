@@ -1,29 +1,225 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
+    <!--link de bootstrap-->
     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-    <link rel="shortcut icon" href="./4geeks.ico" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <!--script de los iconos que voy a utilizar de fontawesome-->
+    <script
+      src="https://kit.fontawesome.com/5aadbab2c6.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>HTML5 Form</title>
   </head>
   <body>
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+    <form>
+      <div class="container mt-5 border rounded">
+        <div class="row bg-light border-bottom p-3">
+          <h2>Payment form example</h2>
+        </div>
+        <div class="row ml-4 mr-1 mt-4" id="alertRow">
+          <div class="alert alert-danger d-none" role="alert" id="alertBox">
+            Some fields are missing
+          </div>
+          <div class="alert alert-success d-none" role="alert" id="alertBox2">
+            Success!
+          </div>
+        </div>
+        <div class="row ml-2 mb-2">
+          <div class="col">
+            <label for="username"><h6>Card #</h6></label><br />
+            <input
+              class="username w-100 form-control"
+              id="username"
+              placeholder="XXXXXXXXXX"
+            />
+          </div>
+          <div class="col">
+            <label for="password"><h6>CVC #</h6></label><br />
+            <input
+              class="password w-100 form-control"
+              type="password"
+              id="password"
+              placeholder="- - -"
+            />
+          </div>
+          <div class="col">
+            <label for="amount"><h6>Amount</h6></label><br />
+            <input
+              class="amount w-100 form-control"
+              id="amount"
+              placeholder="Amount $"
+            />
+          </div>
+        </div>
+        <div class="row ml-2 mb-2">
+          <div class="col">
+            <label for="fname"><h6>First name</h6></label><br />
+            <input type="text" class="form-control w-100" id="fname" />
+          </div>
+          <div class="col m-0">
+            <label for="lname"><h6>Last name</h6></label><br />
+            <input class="form-control lname w-100" id="lname" />
+          </div>
+        </div>
+        <div class="row ml-2 mb-2">
+          <div class="col">
+            <label for="city"><h6>City</h6></label><br />
+            <input class="city w-100 form-control" id="city" />
+          </div>
+          <div class="col">
+            <label for="state"><h6>State</h6></label><br />
+            <input
+              list="country"
+              name="browser"
+              id="browser"
+              class="form-control w-100"
+            />
+            <datalist id="country">
+              <option value="Madrid"> </option>
+              <option value="Comunitat Valenciana"> </option>
+              <option value="Andalucía"> </option>
+              <option value="Cataluña"> </option>
+            </datalist>
+          </div>
+          <div class="col">
+            <label for="postcode"><h6>Postcode</h6></label><br />
+            <input class="postcode w-100 form-control" id="postcode" />
+          </div>
+        </div>
+        <div class="row ml-2 mb-2 mt-3">
+          <div class="col-3">
+            <h6>We accept:</h6>
+            <div
+              class="form-check border rounded p-3 mt-4 bg-secondary d-flex justify-content-between align-items-center"
+              id="cardbox"
+            >
+              <div class="form-check">
+                <input
+                  type="radio"
+                  id="contactChoice1"
+                  name="radio-stacked"
+                  value="Visa"
+                  class="form-check-input"
+                />
+                <i
+                  class="fa fa-cc-visa m-auto text-white"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <div class="form-check">
+                <input
+                  type="radio"
+                  id="contactChoice2"
+                  name="radio-stacked"
+                  value="MasterCard"
+                  class="form-check-input"
+                />
+                <i
+                  class="fa fa-cc-mastercard m-auto text-white"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <div class="form-check">
+                <input
+                  type="radio"
+                  id="contactChoice3"
+                  name="radio-stacked"
+                  value="Other"
+                  class="form-check-input"
+                />
+                <i
+                  class="fa fa-paypal m-auto text-white"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <div class="form-check">
+                <input
+                  type="radio"
+                  id="contactChoice4"
+                  name="radio-stacked"
+                  value="Paypal"
+                  class="form-check-input"
+                />
+                <i
+                  class="fa fa-cc-diners-club m-auto text-white"
+                  aria-hidden="true"
+                ></i>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <label for="postcode"><h6>Message</h6></label><br />
+            <textarea
+              class="textarea w-100 form-control"
+              type="textarea"
+              id="textarea"
+            ></textarea>
+            <p class="fw-light">Add any notes here</p>
+          </div>
+        </div>
+        <div class="row bg-light border-top">
+          <div class="d-flex justify-content-end">
+            <a class="nav-link pl-0" onClick="window.location.reload();"
+              ><input
+                type="submit"
+                id="cancelForm"
+                class="btn btn-secondary mr-2"
+                value="Cancel"
+              />
+            </a>
+            <a class="nav-link pr-6"
+              ><input
+                type="submit"
+                id="sendForm"
+                class="btn btn-primary w-100 mr-2"
+                value="Send"
+            /></a>
+          </div>
+        </div>
       </div>
-    </div>
+    </form>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
