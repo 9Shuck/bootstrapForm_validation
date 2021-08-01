@@ -162,7 +162,9 @@ const checkCity = () => {
 };
 //Comprueba que sean letras
 const isString = text => {
-  return /^[a-zA-Z]+$/.test(text);
+  return /^[a-zA-Z_ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöùúûüýøþÿÐdŒ\s]+(\s|_)?[a-zA-Z_ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöùúûüýøþÿÐdŒ\s]+$/.test(
+    text
+  );
 };
 
 const isNumber = text => {

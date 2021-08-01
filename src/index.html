@@ -44,13 +44,16 @@
               class="username w-100 form-control"
               id="username"
               placeholder="XXXXXXXXXX"
+              type="text"
+              pattern="\d*"
             />
           </div>
           <div class="col">
             <label for="password"><h6>CVC #</h6></label><br />
             <input
               class="password w-100 form-control"
-              type="password"
+              type="text"
+              pattern="\d*"
               id="password"
               placeholder="- - -"
             />
@@ -61,6 +64,8 @@
               class="amount w-100 form-control"
               id="amount"
               placeholder="Amount $"
+              type="text"
+              pattern="\d*"
             />
           </div>
         </div>
